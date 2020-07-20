@@ -1,9 +1,12 @@
-export default function Index() {
+import Nav from '../components/nav'
+
+export default function IndexPage() {
   return (
-    <p>
-      To test the CORS route, open the console in a new tab on a different
-      domain and make a POST / GET / OPTIONS request to <b>/api/cors</b>. Using
-      a different method from those mentioned will be blocked by CORS
-    </p>
+    <div>
+      <Nav />
+      <div className="hero">
+        <h1 className="title">Next.js + Tailwind CSS</h1>
+      </div>
+    </div>
   )
 }
