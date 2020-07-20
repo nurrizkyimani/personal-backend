@@ -31,6 +31,16 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "job_desc": {
+      "type": "component",
+      "repeatable": true,
+      "component": "experiences-detail.job-desc"
+    },
+    "tech_stack": {
+      "type": "component",
+      "repeatable": true,
+      "component": "experiences-detail.tech-stack"
     }
   }
 }

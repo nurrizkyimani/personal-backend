@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_project_details_tags_projects",
+  "info": {
+    "name": "project_stack",
+    "icon": "align-right"
+  },
+  "options": {},
+  "attributes": {
+    "each_tag": {
+      "type": "string"
+    }
+  }
+}

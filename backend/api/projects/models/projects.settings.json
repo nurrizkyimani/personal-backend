@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "projects"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "each_explanation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-details.explanations"
+    },
+    "tags_project": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project-details.tags-project"
+    },
+    "photo": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "url_link": {
+      "type": "string"
+    }
+  }
+}

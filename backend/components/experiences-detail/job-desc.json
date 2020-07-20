@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_experiences_detail_job_descs",
+  "info": {
+    "name": "job_desc",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "each_jobdesc": {
+      "type": "text"
+    }
+  }
+}

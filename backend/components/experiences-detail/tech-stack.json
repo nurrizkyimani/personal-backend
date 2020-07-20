@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_experiences_detail_tech_stacks",
+  "info": {
+    "name": "tech_stack",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "each_stack": {
+      "type": "string"
+    }
+  }
+}

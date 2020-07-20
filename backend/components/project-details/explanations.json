@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_project_details_explanations",
+  "info": {
+    "name": "explanations",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "each_explanation": {
+      "type": "text"
+    }
+  }
+}
