@@ -12,7 +12,7 @@ export default function Nav() {
       <ul className="flex justify-between items-center px-8 py-2">
         <li>
           <Link href="/">
-            <a className="text-blue-500 no-underline">Home</a>
+            <p className="text-3xl flex justify-between no-underline">"👨‍💻   👨‍🚀    👨‍🎓"</p>
           </Link>
         </li>
         <ul className="flex justify-between items-center space-x-4">
