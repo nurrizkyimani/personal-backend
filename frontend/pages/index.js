@@ -17,7 +17,7 @@ export default function IndexPage() {
 						</div>
 
 						<div className="icon-work flex py-2 ">
-							<p className="text-xl mr-1">📑‍</p>
+							<p className="text-xl mr-1">📂‍</p>
 							<a href="" className="ml-3">
 								{' '}
 								Projects{' '}
@@ -50,14 +50,25 @@ export default function IndexPage() {
 					</div>
 					<div className="sidebar overflow-y-scroll mt-2">
 						<div className="your-librari py-2  mt-4 ">
-							<h1 className="tracking-widest mb-2">Your Library</h1>
-							<ul className="font-thin space-y space-y-2 text-sm pl-1">
-								<li>Made For you</li>
+							<h1 className=" font-thin  tracking-widest mb-2">Your Library</h1>
+							<ul className="space-y space-y-2 text-sm pl-1">
+								<li>Reading List </li>
 								<li>Made For you</li>
 								<li>Made For you</li>
 								<li>Made For you</li>
 							</ul>
-						</div>
+            </div>
+
+            <div className="your-librari py-2  mt-4 ">
+							<h1 className=" font-thin tracking-widest mb-2">Playlist</h1>
+							<ul className=" space-y space-y-2 text-sm pl-1">
+								<li>downtown manhattan</li>
+								<li>downtown toronto</li>
+								<li>madison Square</li>
+								<li>Made For you</li>
+							</ul>
+            </div>
+            
 					</div>
 				</div>
 
@@ -68,16 +79,15 @@ export default function IndexPage() {
 								<strong className="font-black"> Hi, I am Nurrizky Imani 👋👋</strong>
 							</h1>
 							<p className="text-lg mb-2">
-								Student in Universitas Gadjah Mada, Interest In Fullstack Engineering with focus on
-								Backend.
+								Student in Universitas Gadjah Mada, Interest In Lorem ipsum, dolor sit amet consectetur adipisicing
 							</p>
 
-							<p className="text-lg mb-12">Anything about computer, I always excited into!</p>
+							<p className="text-lg mb-12">Lorem ipsum dolor sit amet. Lorem, ipsum.</p>
 							<a
 								href="#"
 								class="font-semibold text-lg bg-blue-500 hover:bg-blue-400 text-white py-3 px-10 rounded-full"
 							>
-								Learn more
+								Let's Gooo !
 							</a>
             </div>
 
@@ -85,7 +95,9 @@ export default function IndexPage() {
             
 					</div>
 
-					<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky">Work Experience 🧳</h1>
+          <h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky">Work Experience 🧳</h1>
+          
+          
 
 					<div className="work-exp mt-4 px-10 py-6">
 						<div>
@@ -163,21 +175,39 @@ export default function IndexPage() {
             <h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky">Projects 📂</h1>
             <div className="flex flex-col w-full items-center">
               <h1 className="text-3xl">Bitcoin Tracker</h1>
-              <ul className="list-disc">
-                <li>workin on dubster dub</li>
-                <li>workin on dubster dub</li>
+              <ul className="list-disc w-2/3">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi reprehenderit magnam corrupti necessitatibus assumenda dolor quasi earum ad expedita!</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, minima.</li>
               </ul>
 
             </div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos quam ipsam necessitatibus similique molestiae iure nam fugiat, cum quae ipsa nesciunt, est natus, aliquid perferendis obcaecati quas! Velit minus odit, iste aperiam corrupti, tempore, voluptate rem quis aspernatur veritatis illum!
+
+            <div className="flex flex-col w-full items-center">
+              <h1 className="text-3xl">Bitcoin Tracker</h1>
+              <ul className="list-disc w-2/3">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi reprehenderit magnam corrupti necessitatibus assumenda dolor quasi earum ad expedita!</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, minima.</li>
+              </ul>
+
+            </div>
+
+            <div className="flex flex-col w-full items-center">
+              <h1 className="text-3xl">Bitcoin Tracker</h1>
+              <ul className="list-disc w-2/3">
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi reprehenderit magnam corrupti necessitatibus assumenda dolor quasi earum ad expedita!</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, minima.</li>
+              </ul>
+
+            </div>
+           
           </div>
           <div>
             <h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky">Stack 🛠</h1>
             "stack on stack on stack"
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus doloribus ipsa, praesentium quisquam voluptate iste dignissimos illum harum! Officiis quidem nam repellendus placeat assumenda autem laudantium. Adipisci tempora asperiores modi?
           </div>
-          <div>
-            <h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky">About 🙋‍♂️</h1>
+          <div >
+            <h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky ">About 👨‍🚀</h1>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos aperiam accusantium ullam. Debitis perferendis incidunt iure officiis atque cumque sapiente sed velit sunt assumenda! Repellendus reiciendis veniam enim alias asperiores modi ipsam laborum aut illo omnis? Recusandae eius dignissimos iste rem iure quae a odio asperiores enim nesciunt quam assumenda maxime, nostrum quia impedit doloribus harum repellendus ipsam natus qui velit nisi, culpa accusantium consequuntur! Ratione temporibus, autem fuga facere similique quisquam voluptatem recusandae quidem voluptatum nihil? Totam necessitatibus asperiores excepturi sapiente ipsum vitae earum perferendis, blanditiis, ullam aliquid, saepe dicta architecto. Molestiae deserunt iusto illo, doloremque quis odit tempora?
 					</div>
           
