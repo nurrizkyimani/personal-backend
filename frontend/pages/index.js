@@ -1,6 +1,6 @@
 import Nav from '../components/nav';
 
-export default function IndexPage() {
+export default function IndexPage(props) {
 	return (
 		<div className="flex flex-col h-screen bg-gray-100">
 			<Nav />
@@ -28,9 +28,9 @@ export default function IndexPage() {
 							<svg
 								className="w-6"
 								fill="none"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
 							>
@@ -94,27 +94,82 @@ export default function IndexPage() {
 
 					<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky">Work Experience 🧳</h1>
 
-					<div className="work-exp mt-4 px-10 py-6">
+					<div className="work-exp px-8 py-1">
 						<div>
 							<div className="relative  m-8">
-								<div className="border-r-2 border-gray-800 border-dotted absolute h-full z-0 pl-2 -mt-1" />
+								<div className="border-r-2 border-gray-800 border-dotted absolute h-full z-0 pl-2 mt-2" />
 								<ul className="list-none m-0 p-0">
-									<li className="mb-2">
-										<div className="flex items-center mb-1">
-											<div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10  " />
-											<div className="flex-1 ml-4 font-medium">Sofware Engineering Intern</div>
+
+									<li className="mb-4">
+										<div className="flex mb-1 align-top content-start">
+											<div className="flex"> 
+												<img
+														className="w-12 h-12 object-none -ml-4 z-10"
+														src="https://picsum.photos/200/300?random=1"
+														alt="Sunset in the mountains"
+													/>
+												<div className="flex flex-col">
+													
+													<div className="ml-4 font-medium">Sofware Engineering Intern</div>
+													<p className=" ml-4 text-sm ">ByteDance</p>
+												</div>
+													
+											</div>
+
+											<div className="flex z-auto flex-col flex-1 items-end relative pr-5">
+												<p className="text-sm">Jakarta, Indonesia</p>
+												<p className="text-sm">Aug. 2018 - Sept. 2019</p>
+											</div>
 										</div>
 										<div className="ml-12 ">
-											<div className="flex">
-												<p>ByteDance</p>
-											</div>
-											<ul className="list-disc space-y-3 pl-4">
-												<li>test</li>
+											<div className="flex flex-col" />
+											<ul className="list-disc space-y-2 pl-5">
+												<li>
+													Assemble curriculum of mobile apps development. Using Kotlin as main
+													language, and teach android framework such as MVVM, Room Database,
+													Retrofit, Firebase, RecyclerView, Fragment & Activity
+												</li>
 												<li>test</li>
 												<li>test</li>
 											</ul>
 										</div>
 									</li>
+
+									<li className="mb-4">
+										<div className="flex mb-1 align-top content-start">
+											<div className="flex"> 
+												<img
+														className="w-12 h-12 object-none -ml-4 z-10"
+														src="https://picsum.photos/200/300?random=1"
+														alt="Sunset in the mountains"
+													/>
+												<div className="flex flex-col">
+													
+													<div className="ml-4 font-medium">Sofware Engineering Intern</div>
+													<p className=" ml-4 text-sm ">ByteDance</p>
+												</div>
+													
+											</div>
+
+											<div className="flex z-auto flex-col flex-1 items-end relative pr-5">
+												<p className="text-sm">Jakarta, Indonesia</p>
+												<p className="text-sm">Aug. 2018 - Sept. 2019</p>
+											</div>
+										</div>
+										<div className="ml-12 ">
+											<div className="flex flex-col" />
+											<ul className="list-disc space-y-2 pl-5">
+												<li>
+													Assemble curriculum of mobile apps development. Using Kotlin as main
+													language, and teach android framework such as MVVM, Room Database,
+													Retrofit, Firebase, RecyclerView, Fragment & Activity
+												</li>
+												<li>test</li>
+												<li>test</li>
+											</ul>
+										</div>
+									</li>
+
 									<li className="mb-2">
 										<div className="flex items-center mb-1">
 											<div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10" />
@@ -170,13 +225,10 @@ export default function IndexPage() {
 						</div>
 					</div>
 					<div>
-						<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky overflow-x-hidden">
-							Projects 📂
-						</h1>
+						<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky ">Projects 📂</h1>
 
-						<div className="project-cards-list flex px-4 flex-wrap items-center justify-start py-10">
-
-							<div className=" card w-4/12 mr-5 border-gray-500 shadow-lg overflow-hidden rounded-md">
+						<div className="project-cards-list  px-4 flex flex-wrap  items-center justify-start py-10">
+							<div className=" card max-w-sm mr-2 border-gray-500  shadow-lg overflow-hidden rounded-md">
 								<img
 									className="w-full h-48 object-cover"
 									src="https://picsum.photos/200/300?random=1"
@@ -185,7 +237,77 @@ export default function IndexPage() {
 								<dir className="px-5 py-2 ">
 									<div className="flex flex-col w-full ">
 										<h1 className="text-2xl">Bitcoin Tracker</h1>
-										<ul className="space-y-4 text-sm pt-4">
+										<ul className="space-y-4 text-sm pt-4 list-disc px-5">
+											<li>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi
+												reprehenderit magnam corrupti necessitatibus assumenda dolor quasi earum
+												ad expedita!
+											</li>
+											<li>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, minima.
+											</li>
+										</ul>
+
+										<div class="align-start pt-4">
+											<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2">
+												Flutter
+											</span>
+											<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2">
+												Firebase
+											</span>
+											<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">
+												Rest Api
+											</span>
+										</div>
+									</div>
+								</dir>
+							</div>
+
+							<div className=" card max-w-sm mr-2 border-gray-500  shadow-lg overflow-hidden rounded-md">
+								<img
+									className="w-full h-48 object-cover"
+									src="https://picsum.photos/200/300?random=1"
+									alt="Sunset in the mountains"
+								/>
+								<dir className="px-5 py-2 ">
+									<div className="flex flex-col w-full ">
+										<h1 className="text-2xl">Bitcoin Tracker</h1>
+										<ul className="space-y-4 text-sm pt-4 list-disc px-5">
+											<li>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi
+												reprehenderit magnam corrupti necessitatibus assumenda dolor quasi earum
+												ad expedita!
+											</li>
+											<li>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, minima.
+											</li>
+										</ul>
+
+										<div class="align-start pt-4">
+											<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2">
+												Flutter
+											</span>
+											<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2">
+												Firebase
+											</span>
+											<span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">
+												Rest Api
+											</span>
+										</div>
+									</div>
+								</dir>
+							</div>
+
+							<div className=" card max-w-sm  mr-2 border-gray-500  shadow-lg overflow-hidden rounded-md">
+								<img
+									className="w-full h-48 object-cover"
+									src="https://picsum.photos/200/300?random=1"
+									alt="Sunset in the mountains"
+								/>
+								<dir className="px-5 py-2 ">
+									<div className="flex flex-col w-full ">
+										<h1 className="text-2xl">Bitcoin Tracker</h1>
+										<ul className="space-y-4 text-sm pt-4 list-disc px-5">
 											<li>
 												Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi
 												reprehenderit magnam corrupti necessitatibus assumenda dolor quasi earum
@@ -215,8 +337,11 @@ export default function IndexPage() {
 
 					<div>
 						<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky ">Stack 🛠</h1>
-						<p className="pb-5">I do exploring a lot of stuff. That's my current strategy and curiosity. However, I found out i lean toward backend and want to learn production A.I.</p>
-						
+						<p className="pb-5">
+							I do exploring a lot of stuff. That's my current strategy and curiosity. However, I found
+							out i lean toward backend and want to learn production A.I.
+						</p>
+
 						<div className="flex space-x-5 pt-4 py-20">
 							<div className="w-1/3">
 								<h5 className="text-xl pb-1"> Man I love this</h5>
@@ -310,9 +435,9 @@ export default function IndexPage() {
 								<div className="card border rounded-md shadow-md px-10 py-8 w-5/12 flex flex-col items-center">
 									<svg fill="currentColor" viewBox="0 0 20 20">
 										<path
-											fill-rule="evenodd"
+											fillRule="evenodd"
 											d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z"
-											clip-rule="evenodd"
+											clipRule="evenodd"
 										/>
 									</svg>
 									<button class=" rounded p-2 w-20 bg-blue-400 text-gray-200"> contact </button>
