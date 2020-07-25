@@ -21,7 +21,7 @@ export default function Nav() {
 				<ul className="flex justify-between items-center space-x-2 mr-3">
 
 					<li>
-						<a href="#" className="inline-block text-sm py-2 pr-2  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
+						<a href="#" className="inline-block text-sm py-2 pr-2 hover:shadow-inner transform pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
 							<div className="flex">
 								<svg
 									className="w-8 mr-2 "
@@ -39,7 +39,7 @@ export default function Nav() {
 					</li>
 
 					<li>
-						<a href="#" class="inline-block text-sm py-2 pr-2  pl-1 leading-snug rounded-md text-gray-900 transition duration-300 ease-in-out hover:bg-gray-300 mt-4 lg:mt-0">
+						<a href="#" class="inline-block text-sm py-2 pr-2  pl-1 hover:shadow-inner  leading-snug rounded-md text-gray-900 transition duration-300 ease-in-out hover:bg-gray-300 mt-4 lg:mt-0">
 							<div className="flex">
 								<svg
 								className="w-8 mr-2"
@@ -56,7 +56,7 @@ export default function Nav() {
 					</li>
 
 					<li>
-						<a href="#" class="inline-block text-sm py-2 pr-2  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
+						<a href="#" class="inline-block text-sm py-2 pr-2 hover:shadow-inner  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
 							<div className="flex">
 								<svg
 							className="w-8 mr-2"

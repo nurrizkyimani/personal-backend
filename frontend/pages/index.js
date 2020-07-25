@@ -274,7 +274,9 @@ export default function IndexPage(props) {
 											</ul>
 										</div>
 									</li>
-
+								
+								
+								
 								</ul>
 							</div>
 						</div>
@@ -454,7 +456,7 @@ export default function IndexPage(props) {
 					</div>
 					<div className="min-h-full">
 						<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky font-bold ">About 👨‍🚀</h1>
-						<div className="flex ">
+						<div className="flex">
 							<div className="w-1/2 border-gray-500 pr-5">
 								<h5 className="text-lg text-gray-600 font-thin -mb-1"> Nice to meet you </h5>
 								<h1 className="text-5xl font-bold tracking-wide"> Hi there, I'am Nurrizky </h1>
@@ -469,7 +471,7 @@ export default function IndexPage(props) {
 									Artificial Intelligent.{' '}
 								</p>
 
-								<p className="text-lg font-light tracking-normal pt-8 text-left ">
+								<p className="text-lg font-light tracking-normal pt-8 text-left leading-loose">
 									Outside of my full-time commitments, I do read books, photograph, food and stuff and
 									religiously working on the social econ meritocracy ladder by joining competition and
 									hackathon.{' '}
