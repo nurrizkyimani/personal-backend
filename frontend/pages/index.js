@@ -170,56 +170,111 @@ export default function IndexPage(props) {
 										</div>
 									</li>
 
-									<li className="mb-2">
-										<div className="flex items-center mb-1">
-											<div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10" />
-											<div className="flex-1 ml-4 font-medium">May 2019 - Learn Golang</div>
-										</div>
-										<div className="ml-12">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
-											tenetur, suscipit atque et nulla dolores unde maiores doloribus nemo
-											possimus commodi totam consectetur temporibus odit velit illo repellendus
-											provident vitae.
-										</div>
-									</li>
-									<li className="mb-2">
-										<div className="flex items-center mb-1">
-											<div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10" />
-											<div className="flex-1 ml-4 font-medium">
-												April 2019 - Learn Photography
+									<li className="mb-4">
+										<div className="flex mb-1 align-top content-start">
+											<div className="flex"> 
+												<img
+														className="w-12 h-12 object-none -ml-4 z-10"
+														src="https://picsum.photos/200/300?random=1"
+														alt="Sunset in the mountains"
+													/>
+												<div className="flex flex-col">
+													
+													<div className="ml-4 font-medium">Sofware Engineering Intern</div>
+													<p className=" ml-4 text-sm ">ByteDance</p>
+												</div>
+													
+											</div>
+
+											<div className="flex z-auto flex-col flex-1 items-end relative pr-5">
+												<p className="text-sm">Jakarta, Indonesia</p>
+												<p className="text-sm">Aug. 2018 - Sept. 2019</p>
 											</div>
 										</div>
-										<div className="ml-12">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
-											tenetur, suscipit atque et nulla dolores unde maiores doloribus nemo
-											possimus commodi totam consectetur temporibus odit velit illo repellendus
-											provident vitae.
+										<div className="ml-12 ">
+											<div className="flex flex-col" />
+											<ul className="list-disc space-y-2 pl-5">
+												<li>
+													Assemble curriculum of mobile apps development. Using Kotlin as main
+													language, and teach android framework such as MVVM, Room Database,
+													Retrofit, Firebase, RecyclerView, Fragment & Activity
+												</li>
+												<li>test</li>
+												<li>test</li>
+											</ul>
 										</div>
 									</li>
-									<li className="mb-2">
-										<div className="flex items-center mb-1">
-											<div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10" />
-											<div className="flex-1 ml-4 font-medium">Feb 2018 - Learn Laravel</div>
+
+									<li className="mb-4">
+										<div className="flex mb-1 align-top content-start">
+											<div className="flex"> 
+												<img
+														className="w-12 h-12 object-none -ml-4 z-10"
+														src="https://picsum.photos/200/300?random=1"
+														alt="Sunset in the mountains"
+													/>
+												<div className="flex flex-col">
+													
+													<div className="ml-4 font-medium">Sofware Engineering Intern</div>
+													<p className=" ml-4 text-sm ">ByteDance</p>
+												</div>
+													
+											</div>
+
+											<div className="flex z-auto flex-col flex-1 items-end relative pr-5">
+												<p className="text-sm">Jakarta, Indonesia</p>
+												<p className="text-sm">Aug. 2018 - Sept. 2019</p>
+											</div>
 										</div>
-										<div className="ml-12">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
-											tenetur, suscipit atque et nulla dolores unde maiores doloribus nemo
-											possimus commodi totam consectetur temporibus odit velit illo repellendus
-											provident vitae.
+										<div className="ml-12 ">
+											<div className="flex flex-col" />
+											<ul className="list-disc space-y-2 pl-5">
+												<li>
+													Assemble curriculum of mobile apps development. Using Kotlin as main
+													language, and teach android framework such as MVVM, Room Database,
+													Retrofit, Firebase, RecyclerView, Fragment & Activity
+												</li>
+												<li>test</li>
+												<li>test</li>
+											</ul>
 										</div>
 									</li>
-									<li className="mb-2">
-										<div className="flex items-center mb-1">
-											<div className="bg-indigo-600 rounded-full h-4 w-4 border-gray-200 border-2 z-10" />
-											<div className="flex-1 ml-4 font-medium">May 2017 - Learn PHP</div>
+
+									<li className="mb-4">
+										<div className="flex mb-1 align-top content-start">
+											<div className="flex"> 
+												<img
+														className="w-12 h-12 object-none -ml-4 z-10"
+														src="https://picsum.photos/200/300?random=1"
+														alt="Sunset in the mountains"
+													/>
+												<div className="flex flex-col">
+													
+													<div className="ml-4 font-medium">Sofware Engineering Intern</div>
+													<p className=" ml-4 text-sm ">ByteDance</p>
+												</div>
+													
+											</div>
+
+											<div className="flex z-auto flex-col flex-1 items-end relative pr-5">
+												<p className="text-sm">Jakarta, Indonesia</p>
+												<p className="text-sm">Aug. 2018 - Sept. 2019</p>
+											</div>
 										</div>
-										<div className="ml-12">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
-											tenetur, suscipit atque et nulla dolores unde maiores doloribus nemo
-											possimus commodi totam consectetur temporibus odit velit illo repellendus
-											provident vitae.
+										<div className="ml-12 ">
+											<div className="flex flex-col" />
+											<ul className="list-disc space-y-2 pl-5">
+												<li>
+													Assemble curriculum of mobile apps development. Using Kotlin as main
+													language, and teach android framework such as MVVM, Room Database,
+													Retrofit, Firebase, RecyclerView, Fragment & Activity
+												</li>
+												<li>test</li>
+												<li>test</li>
+											</ul>
 										</div>
 									</li>
+
 								</ul>
 							</div>
 						</div>
@@ -414,7 +469,7 @@ export default function IndexPage(props) {
 									Artificial Intelligent.{' '}
 								</p>
 
-								<p className="text-lg font-light tracking-normal pt-8 text-left leading-loose">
+								<p className="text-lg font-light tracking-normal pt-8 text-left ">
 									Outside of my full-time commitments, I do read books, photograph, food and stuff and
 									religiously working on the social econ meritocracy ladder by joining competition and
 									hackathon.{' '}

@@ -12,7 +12,7 @@ export default function Nav() {
 			<ul className="flex  justify-between items-center px-8 py-2">
 				<li>
 					<Link href="/">
-						<p className="text-3xl flex justify-between no-underline">"👨‍💻 👨‍🚀 👨‍🎓"</p>
+						<p className="text-3xl flex justify-between no-underline  transform hover:-translate-y-1 duration-300  ">"👨‍💻 👨‍🚀 👨‍🎓"</p>
 						
 					</Link>
 					
@@ -21,7 +21,7 @@ export default function Nav() {
 				<ul className="flex justify-between items-center space-x-2 mr-3">
 
 					<li>
-						<a href="#" className="inline-block text-sm py-2 pr-2  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-200 mt-4 lg:mt-0">
+						<a href="#" className="inline-block text-sm py-2 pr-2  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
 							<div className="flex">
 								<svg
 									className="w-8 mr-2 "
