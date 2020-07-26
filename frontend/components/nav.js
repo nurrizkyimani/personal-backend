@@ -8,11 +8,11 @@ const links = [
 
 export default function Nav() {
 	return (
-		<nav>
-			<ul className="flex  justify-between items-center px-8 py-2">
+		<nav className="mb-5 md:mb-0">
+			<ul className="flex flex-col md:flex-row justify-between items-center px-8 py-2">
 				<li>
 					<Link href="/">
-						<p className="text-3xl flex justify-between no-underline  transform hover:-translate-y-1 duration-300  ">"👨‍💻 👨‍🚀 👨‍🎓"</p>
+						<p className="text-3xl flex justify-between no-underline text-center transform hover:-translate-y-1 duration-300  ">"👨‍💻 👨‍🚀 👨‍🎓"</p>
 						
 					</Link>
 					
@@ -39,7 +39,7 @@ export default function Nav() {
 					</li>
 
 					<li>
-						<a href="#" class="inline-block text-sm py-2 pr-2  pl-1 hover:shadow-inner  leading-snug rounded-md text-gray-900 transition duration-300 ease-in-out hover:bg-gray-300 mt-4 lg:mt-0">
+						<a href="#" className="inline-block text-sm py-2 pr-2  pl-1   leading-snug rounded-md text-gray-900 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 mt-4 lg:mt-0">
 							<div className="flex">
 								<svg
 								className="w-8 mr-2"
@@ -56,7 +56,7 @@ export default function Nav() {
 					</li>
 
 					<li>
-						<a href="#" class="inline-block text-sm py-2 pr-2 hover:shadow-inner  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
+						<a href="#" className="inline-block text-sm py-2 pr-2 hover:shadow-inner  pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
 							<div className="flex">
 								<svg
 							className="w-8 mr-2"
