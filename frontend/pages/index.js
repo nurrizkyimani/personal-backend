@@ -119,17 +119,17 @@ export default function IndexPage(props) {
 								Artificial Intelligent.
 							</p>
 
-							<p className="text-lg mb-12">Lorem ipsum dolor sit amet. Lorem, ipsum.</p>
+							<p className="text-lg mb-5 md:mb-12">Lorem ipsum dolor sit amet. Lorem, ipsum.</p>
 							<a
 								href="#"
-								class="font-semibold text-lg bg-blue-500 hover:bg-blue-400 text-white py-3 px-10 rounded-full"
+								class="font-semibold text-lg bg-blue-500 hover:bg-blue-400 transition duration-300 ease-in-out  text-white py-3 px-10 rounded-full hover:shadow-inner transform"
 							>
 								Let's Gooo !
 							</a>
 						</div>
 					</div>
 
-					<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky px-5 md:px-0">
+					<h1 className=" border-b  border-blue-600 mb-5 md:mb-0 text-4xl sticky px-5 md:px-0">
 						 Experience 🧳
 					</h1>
 
@@ -227,62 +227,72 @@ export default function IndexPage(props) {
 					<div>
 						<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky px-5 md:px-0 ">Stack 🛠</h1>
 						<div className="px-5 md:px-0">
-							<p className="pb-5">
+							<p className="md:pb-5">
 								I do exploring a lot of stuff. That's my current strategy and curiosity. However, I
 								found out i lean toward backend and want to learn production A.I.
 							</p>
 
-							<div className="flex flex-col md:space-x-5 pt-4 py-20 space-y-3 md:space-y-0">
+							<div className="flex flex-col md:flex-row md:space-x-5 pt-4 py-20 space-y-3 md:space-y-0">
 								<div className="md:w-1/3">
-									<h5 className="text-xl pb-1"> Man I love this</h5>
-									<div className="pl-4">
-										<ul className="space-y-2">
+									<h5 className="text-xl pb-2"> Man I love this</h5>
+									<div className="pl-4 flex">
+										<ul className="space-y-2 w-1/2">
 											<li>Kotlin</li>
 											<li>Tailwindcss</li>
 											<li>Javascript</li>
 											<li>Kotlin</li>
+											<li>ReactJS</li>
+										</ul>
+										<ul className="space-y-2 md:mt-0 w-1/2">
+									
 											<li>Tailwindcss</li>
 											<li>Javascript</li>
 											<li>Python</li>
 											<li>Pytorch</li>
-											<li>ReactJS</li>
+											
 										</ul>
 									</div>
 									
 								</div>
 
 								<div className="md:w-1/3">
-									<h5 className="text-xl pb-1"> Experience</h5>
-									<div className="pl-4">
-										<ul className="space-y-2">
+									<h5 className="text-xl pb-2"> Experience</h5>
+									<div className="pl-4 flex">
+										<ul className="space-y-2 w-1/2">
 											<li>Kotlin</li>
 											<li>Tailwindcss</li>
 											<li>Javascript</li>
 											<li>Kotlin</li>
+											<li>ReactJS</li>
+										</ul>
+										<ul className="space-y-2 md:mt-0 w-1/2">
+									
 											<li>Tailwindcss</li>
 											<li>Javascript</li>
 											<li>Python</li>
 											<li>Pytorch</li>
-											<li>ReactJS</li>
+											
 										</ul>
 									</div>
 								</div>
 
 								<div className="md:w-1/3">
-									<h5 className="text-xl pb-1"> I am sucks but i want to learn</h5>
-									<div className="pl-4">
-										<ul className="space-y-2">
+									<h5 className="text-xl pb-2">Want to Learn</h5>
+									<div className="pl-4 flex">
+										<ul className="space-y-2 w-1/2">
 											<li>Kotlin</li>
 											<li>Tailwindcss</li>
 											<li>Javascript</li>
 											<li>Kotlin</li>
+											<li>ReactJS</li>
+										</ul>
+										<ul className="space-y-2 md:mt-0 w-1/2">
+									
 											<li>Tailwindcss</li>
-											<h5 className=""> Data Science</h5>
-											<ul className="space-y-1  ml-4">
-												<li>Kotlin</li>
-												<li>Tailwindcss</li>
-												<li>Javascript</li>
-											</ul>
+											<li>Javascript</li>
+											<li>Python</li>
+											<li>Pytorch</li>
+											
 										</ul>
 									</div>
 								</div>
@@ -325,17 +335,17 @@ export default function IndexPage(props) {
 								</p>
 							</div>
 
-							<div className=" border-gray-500 flex lg:items-center flex-col justify-center lg:-mt-20">
-								<div className="card border rounded-md shadow-md px-10 py-8 lg:w-5/12 flex flex-col items-center">
-									<svg fill="currentColor" viewBox="0 0 20 20">
-										<path
-											fillRule="evenodd"
-											d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z"
-											clipRule="evenodd"
-										/>
-									</svg>
-									<button class=" rounded p-2 w-20 bg-blue-400 text-gray-200"> contact </button>
-									<button class=" rounded p-2 w-20 bg-blue-400 text-gray-200"> CV </button>
+							<div className=" border-gray-500 flex lg:items-center flex-col justify-center ">
+								<div className="card rounded-md shadow-md px-10 py-8 md:w-7/12 flex flex-col items-center space-y-3 transform hover:scale-105 duration-300 hover:shadow-xl">
+									<img
+														className="rounded-full "
+														src="https://avatars3.githubusercontent.com/u/25843889?s=460&u=0665df9620e6db3156619b8414fdd6b047f32286&v=4"
+														alt="Sunset in the mountains"
+									/>
+									
+									
+									<a href="" class=" rounded p-2 w-20  mt-10 "> contact </a>
+									<a  href="" class=" rounded p-2 w-20 "> CV </a>
 								</div>
 							</div>
 						</div>
