@@ -42,9 +42,11 @@ const links = [
 ];
 
 export default function Nav() {
+
+	
 	return (
-		<nav className="mb-5 md:mb-0">
-			<ul className="flex flex-col md:flex-row justify-between items-center px-8 py-2">
+		<nav className="md:mb-5 md:mb-0">
+			<ul className="md:flex flex-col md:flex-row justify-between items-center px-8 py-2 hidden">
 				<li>
 					<Link href="/">
 						<p className="text-3xl font-serif flex justify-between no-underline text-center transform hover:-translate-y-1 duration-300  ">"👨‍💻 👨‍🚀 👨‍🎓"</p>
@@ -52,10 +54,10 @@ export default function Nav() {
 					</Link>
 					
 				</li>
-				<ul className="flex justify-between items-center space-x-2 mr-3">
+				<ul className="md:flex justify-between items-center space-x-2 mr-3 hidden">
 					{links.map(link => (
 								<li>
-									<a href="#" className="inline-block text-sm py-2 pr-2 hover:shadow-inner transform pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0">
+									<a href="#" className="inline-block text-sm py-2 pr-2 hover:shadow-inner transform pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 md:mt-0">
 										<div className="flex">
 											{link.href1}
 											<p className="text-base">	{link.label}</p>
