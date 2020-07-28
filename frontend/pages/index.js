@@ -283,19 +283,24 @@ export default function IndexPage() {
 										href={project.url_link}
 										key={project.id}
 										className=" 
+
 										card 
+										flex
+										flex-col
+										justify-between
 										max-w-almost-sm
 										flex-grow mb-8 
 										mr-2 border-gray-500  shadow-lg overflow-hidden rounded-md 
 										transform hover:scale-105 duration-300 hover:shadow-xl"
 									>
+									<div>
 										<img
 											className="w-full h-48 object-cover border-b"
 											src={`http://localhost:1337${project.photo[0].url}`}
 											alt="Sunset in the mountains"
 										/>
 										<dir className="px-5 py-2 ">
-											<div className="flex flex-col w-full ">
+											<div className="flex flex-col justify-between w-full min-h-full">
 												<h1 className="text-2xl">{project.title}</h1>
 												<ul className="space-y-4 text-sm pt-4 list-disc px-5">
 													{project.each_explanation.map((expla) => (
@@ -303,7 +308,12 @@ export default function IndexPage() {
 													))}
 												</ul>
 
-												<div class="align-start pt-4">
+												
+											</div>
+											</dir>
+										</div>
+
+										<div class="align-start pt-4 items-end px-5 pb-5">
 													{project.tags_project.map((tag) => (
 														<span
 															key={tag.id}
@@ -313,8 +323,6 @@ export default function IndexPage() {
 														</span>
 													))}
 												</div>
-											</div>
-										</dir>
 									</a>
 								))}
 							</div>
