@@ -19,4 +19,10 @@
   background-color: #2ffd0f;
 }
 
+.max-w-almost-sm {
+  max-width: 23rem;
+}
+
+.button-big-sur {}
+
 @tailwind utilities;
