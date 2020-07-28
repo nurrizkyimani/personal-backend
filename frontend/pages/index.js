@@ -2,8 +2,9 @@ import Nav from '../components/nav';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function IndexPage(props) {
+export default function IndexPage() {
 	const links = [
 		{
 			href1: (
@@ -52,6 +53,8 @@ export default function IndexPage(props) {
 	const [ projects, setProjects ] = useState([]);
 	const [ experiences, setExperiences ] = useState([]);
 
+	const [ isToggled, setToggled ] = useState(false);
+
 	useEffect(() => {
 		const fetching = async () => {
 			try {
@@ -76,30 +79,32 @@ export default function IndexPage(props) {
 		fetchingexp();
 	}, []);
 
-	useEffect(
-		() => {
-			console.log(experiences);
-		},
-		[ experiences ]
-	);
+	const toggleTrueFalse = () => setToggled(!isToggled);
 
 	return (
 		<div className="">
-			<div className="flex flex-col relative bg-gray-100">
-				<Nav />
+			<div className="flex flex-col h-screen relative bg-gray-100">
+				<Nav addClass="bg-blue-100" isToggledProp={isToggled} toggleTFProp={() => toggleTrueFalse()} />
 
 				<div className="flex-1 md:flex md:overflow-y-hidden h-screen ">
 					{/* sidebar */}
-					<div className="sidebar md:w-48 mb-5 md:mb-0 flex-none md:flex flex-col divide-y px-4 pl-5  md:mt-5 min-h-screen fixed z-20 md:static md:z-0 md:bg-gray-0 bg-gray-100 w-screen top-0">
-						
-						<div className="sidebar-top text-4xl md:text-base space-y-5 md:space-y-0 object-center py-10 md:py-0  ">
-
-							
-								<p className="self-center text-5xl font-serif flex justify-between no-underline text-center transform hover:-translate-y-1 duration-300  md:hidden
+					<div
+						className={`
+						sidebar md:w-48 mb-5 md:mb-0 flex-none md:flex 
+						flex-col divide-y px-4 pl-5  md:mt-5 
+						min-h-screen md:min-h-0 fixed z-20
+						md:static md:z-0 md:bg-gray-0 bg-gray-100
+						w-screen top-0
+						ease-linear
+						${isToggled ? '' : 'hidden'}`}
+					>
+						<div
+							className={`sidebar-top text-3xl md:text-base space-y-5 md:space-y-0 object-center py-10 md:py-0 `}
+						>
+							<p className="self-center text-4xl font-serif flex justify-between no-underline text-center transform hover:-translate-y-1 duration-300  md:hidden
 									">
-									"👨‍💻 👨‍🚀 👨‍🎓"
-								</p>
-						
+								"👨‍💻 👨‍🚀 👨‍🎓"
+							</p>
 
 							<div className="icon-work flex py-2  hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2  ">
 								<p className="md: mr-1">🏠</p>
@@ -131,12 +136,13 @@ export default function IndexPage(props) {
 								</a>
 							</div>
 
-							<ul className="flex justify-between items-center space-x-1 mr-3 md:hidden">
+							<ul className="flex justify-between items-center mr-3 md:hidden">
 								{links.map((link) => (
 									<li>
 										<a
 											href="#"
-											className="inline-block text-sm py-2 pr-2 hover:shadow-inner transform pl-1 leading-snug rounded-md text-gray-900  transition duration-300 ease-in-out  hover:bg-gray-300 mt-4 lg:mt-0"
+											className="inline-block text-sm px-2 py-2 hover:shadow-inner transform pl-1 leading-snug rounded-md text-gray-900  
+											transition duration-300 ease-in-out  hover:bg-gray-300  lg:mt-0"
 										>
 											<div className="flex">
 												{link.href1}
@@ -147,10 +153,28 @@ export default function IndexPage(props) {
 								))}
 							</ul>
 
-							<div className="close">close</div>
+							<div className="close flex justify-end md:hidden ">
+								<button
+									className="w-16  transition duration-300 ease-in-out  hover:bg-gray-300  hover:shadow-inner rounded-md"
+									onClick={() => {
+										toggleTrueFalse();
+									}}
+								>
+									<svg
+										fill="none"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path d="M6 18L18 6M6 6l12 12" />
+									</svg>
+								</button>
+							</div>
 						</div>
 
-						<div className="sidebar overflow-y-scroll mt-2 hidden">
+						<div className="sidebar overflow-y-scroll mt-2 hidden md:flex flex-col">
 							<div className="your-librari py-2  mt-4 ">
 								<h1 className=" font-thin  tracking-widest mb-2">Your Library</h1>
 								<ul className="space-y space-y-2 text-sm pl-1">
@@ -173,7 +197,7 @@ export default function IndexPage(props) {
 						</div>
 					</div>
 
-					<div className="main w-full lg:px-5 overflow-y-auto  ">
+					<div className="main w-full lg:px-5 overflow-y-auto  bg-gray-100 ">
 						<div className="container mx-auto px-6 md:px-12 flex flex-col-reverse sm:flex-row items-center  mb-5  min-h-full ">
 							<div className="sm:w-4/5 flex flex-col items-start sm:mt-0">
 								<h1 className="text-4xl lg:text-6xl leading-none mb-4">
@@ -218,14 +242,14 @@ export default function IndexPage(props) {
 														</div>
 													</div>
 
-													<div className="flex z-auto flex-col flex-1 items-end relative pr-5">
+													<div className="flex z-auto flex-col flex-1 items-end relative md:pr-5 text-right">
 														<p className="text-sm">{exp.location}</p>
 														<p className="text-sm">{exp.time_range}</p>
 													</div>
 												</div>
 												<div className="ml-12 ">
 													<div className="flex flex-col" />
-													<ul className="list-disc space-y-2 pl-5">
+													<ul className="list-disc space-y-2 pl-5 overflow-x-hidden">
 														{exp.job_desc.map((job) => (
 															<li key={job.id}>{job.each_jobdesc}</li>
 														))}
@@ -258,7 +282,9 @@ export default function IndexPage(props) {
 									<a
 										href={project.url_link}
 										key={project.id}
-										className=" card max-w-sm flex-grow mb-8  mr-2 border-gray-500  shadow-lg overflow-hidden rounded-md transform hover:scale-105 duration-300 hover:shadow-xl"
+										className=" 
+										card max-w-sm flex-grow mb-8  mr-2 border-gray-500  shadow-lg overflow-hidden rounded-md 
+										transform hover:scale-105 duration-300 hover:shadow-xl"
 									>
 										<img
 											className="w-full h-48 object-cover border-b"
@@ -397,22 +423,258 @@ export default function IndexPage(props) {
 									</p>
 								</div>
 
-								<div className=" border-gray-500 flex lg:items-center flex-col justify-center ">
-									<div className="card rounded-md shadow-md px-10 py-8 md:w-7/12 flex flex-col items-center space-y-3 transform hover:scale-105 duration-300 hover:shadow-xl">
-										<img
-											className="rounded-full "
-											src="https://avatars3.githubusercontent.com/u/25843889?s=460&u=0665df9620e6db3156619b8414fdd6b047f32286&v=4"
-											alt="Sunset in the mountains"
-										/>
+								<div className=" border-gray-500 flex lg:items-center flex-col ">
+									<div className="card rounded-md  md:px-6 py-8  md:w-5/12 flex flex-col  space-y-3">
+										<div className="relative  w-3/12 md:w-9/12 transform hover:scale-110 duration-300 ">
+											<img
+												className="rounded-full hover:shadow-xl transform ease-in-out duration-300 "
+												src="https://avatars3.githubusercontent.com/u/25843889?s=460&u=0665df9620e6db3156619b8414fdd6b047f32286&v=4"
+												alt="Sunset in the mountains"
+											/>
 
-										<a href="" class=" rounded p-2 w-20  mt-10 ">
-											{' '}
-											contact{' '}
-										</a>
-										<a href="" class=" rounded p-2 w-20 ">
-											{' '}
-											CV{' '}
-										</a>
+											<div className="bg-green-online p-3 md:p-4 rounded-full absolute right-0 bottom-0 " />
+										</div>
+
+										<div>
+											<h3 className="page-h3">Stay up-to-date</h3>
+											<p className=" text-sm">
+												<strong>Hint:</strong>{' '}
+												<span class=" opacity-50">Active on Instagram and Twitter.</span>
+											</p>
+											<ul className="social-link space-y-2 mt-6 ">
+												<li className="social-link  ">
+													<a
+														className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
+														href=""
+													>
+														<div className="mr-2">
+															<svg
+																width="20px"
+																height="20px"
+																viewBox="0 0 20 20"
+																version="1.1"
+																xmlns="http://www.w3.org/2000/svg"
+															>
+																<g
+																	id="instagram-icon"
+																	stroke="none"
+																	stroke-width="1"
+																	fill="none"
+																	fill-rule="evenodd"
+																>
+																	<g>
+																		<rect
+																			id="Rectangle-Copy"
+																			fill-opacity="0"
+																			fill="#D8D8D8"
+																			x="0"
+																			y="0"
+																			width="20"
+																			height="20"
+																		/>
+																		<g
+																			class="social-icon-color"
+																			id="instagram-shape"
+																			fill="#000000"
+																			fill-rule="nonzero"
+																		>
+																			<path
+																				class="social-icon-color"
+																				d="M9.98019802,1.8019802 C12.6455446,1.8019802 12.9584158,1.81386139 14.0118812,1.86138614 C14.9861386,1.9049505 15.5128713,2.06732673 15.8653465,2.20594059 C16.3326733,2.38811881 16.6653465,2.6019802 17.0138614,2.95049505 C17.3623762,3.2990099 17.580198,3.63168317 17.7584158,4.0990099 C17.8930693,4.45148515 18.0594059,4.97821782 18.1029703,5.95247525 C18.150495,7.00594059 18.1623762,7.31881188 18.1623762,9.98415842 C18.1623762,12.649505 18.150495,12.9623762 18.1029703,14.0158416 C18.0594059,14.990099 17.8970297,15.5168317 17.7584158,15.8693069 C17.5762376,16.3366337 17.3623762,16.6693069 17.0138614,17.0178218 C16.6653465,17.3663366 16.3326733,17.5841584 15.8653465,17.7623762 C15.5128713,17.8970297 14.9861386,18.0633663 14.0118812,18.1069307 C12.9584158,18.1544554 12.6455446,18.1663366 9.98019802,18.1663366 C7.31485149,18.1663366 7.0019802,18.1544554 5.94851485,18.1069307 C4.97425743,18.0633663 4.44752475,17.9009901 4.0950495,17.7623762 C3.62772277,17.580198 3.2950495,17.3663366 2.94653465,17.0178218 C2.5980198,16.6693069 2.38019802,16.3366337 2.2019802,15.8693069 C2.06732673,15.5168317 1.9009901,14.990099 1.85742574,14.0158416 C1.80990099,12.9623762 1.7980198,12.649505 1.7980198,9.98415842 C1.7980198,7.31881188 1.80990099,7.00594059 1.85742574,5.95247525 C1.9009901,4.97821782 2.06336634,4.45148515 2.2019802,4.0990099 C2.38415842,3.63168317 2.5980198,3.2990099 2.94653465,2.95049505 C3.2950495,2.6019802 3.62772277,2.38415842 4.0950495,2.20594059 C4.44752475,2.07128713 4.97425743,1.9049505 5.94851485,1.86138614 C7.0019802,1.80990099 7.31485149,1.8019802 9.98019802,1.8019802 Z M9.98019802,0.00396039604 C7.27128713,0.00396039604 6.93069307,0.0158415842 5.86534653,0.0633663366 C4.8039604,0.110891089 4.07920792,0.281188119 3.44554455,0.526732673 C2.78811881,0.78019802 2.23366337,1.12475248 1.67920792,1.67920792 C1.12475248,2.23366337 0.784158416,2.79207921 0.526732673,3.44554455 C0.281188119,4.07920792 0.110891089,4.8039604 0.0633663366,5.86930693 C0.0158415842,6.93069307 0.00396039604,7.27128713 0.00396039604,9.98019802 C0.00396039604,12.6891089 0.0158415842,13.029703 0.0633663366,14.0950495 C0.110891089,15.1564356 0.281188119,15.8811881 0.526732673,16.5188119 C0.78019802,17.1762376 1.12475248,17.7306931 1.67920792,18.2851485 C2.23366337,18.839604 2.79207921,19.180198 3.44554455,19.4376238 C4.07920792,19.6831683 4.8039604,19.8534653 5.86930693,19.9009901 C6.93465347,19.9485149 7.27128713,19.960396 9.98415842,19.960396 C12.6970297,19.960396 13.0336634,19.9485149 14.0990099,19.9009901 C15.160396,19.8534653 15.8851485,19.6831683 16.5227723,19.4376238 C17.180198,19.1841584 17.7346535,18.839604 18.2891089,18.2851485 C18.8435644,17.7306931 19.1841584,17.1722772 19.4415842,16.5188119 C19.6871287,15.8851485 19.8574257,15.160396 19.9049505,14.0950495 C19.9524752,13.029703 19.9643564,12.6930693 19.9643564,9.98019802 C19.9643564,7.26732673 19.9524752,6.93069307 19.9049505,5.86534653 C19.8574257,4.8039604 19.6871287,4.07920792 19.4415842,3.44158416 C19.1881188,2.78415842 18.8435644,2.22970297 18.2891089,1.67524752 C17.7346535,1.12079208 17.1762376,0.78019802 16.5227723,0.522772277 C15.8891089,0.277227723 15.1643564,0.106930693 14.0990099,0.0594059406 C13.029703,0.0158415842 12.6891089,0.00396039604 9.98019802,0.00396039604 Z"
+																				id="Shape"
+																			/>
+																			<path
+																				d="M9.98019802,4.85544554 C7.15247525,4.85544554 4.85544554,7.14851485 4.85544554,9.98019802 C4.85544554,12.8118812 7.15247525,15.1049505 9.98019802,15.1049505 C12.8079208,15.1049505 15.1049505,12.8079208 15.1049505,9.98019802 C15.1049505,7.15247525 12.8079208,4.85544554 9.98019802,4.85544554 Z M9.98019802,13.3069307 C8.14257426,13.3069307 6.65346535,11.8178218 6.65346535,9.98019802 C6.65346535,8.14257426 8.14257426,6.65346535 9.98019802,6.65346535 C11.8178218,6.65346535 13.3069307,8.14257426 13.3069307,9.98019802 C13.3069307,11.8178218 11.8178218,13.3069307 9.98019802,13.3069307 Z"
+																				id="Shape"
+																			/>
+																			<circle
+																				id="Oval"
+																				cx="15.3069307"
+																				cy="4.65346535"
+																				r="1.1960396"
+																			/>
+																		</g>
+																	</g>
+																</g>
+															</svg>
+														</div>
+
+														<p>Instagram</p>
+													</a>
+												</li>
+
+												<li className="social-link">
+													<a
+														className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
+														href=""
+													>
+														<div className="mr-2 ">
+															<svg
+																width="20px"
+																height="20px"
+																viewBox="0 0 20 20"
+																version="1.1"
+																xmlns="http://www.w3.org/2000/svg"
+															>
+																<g
+																	id="twitter-icon"
+																	stroke="none"
+																	stroke-width="1"
+																	fill="none"
+																	fill-rule="evenodd"
+																>
+																	<g>
+																		<rect
+																			id="Rectangle"
+																			fill-opacity="0"
+																			fill="#D8D8D8"
+																			x="0"
+																			y="0"
+																			width="20"
+																			height="20"
+																		/>
+																		<path
+																			class="social-icon-color"
+																			d="M20,3.01256654 C19.2510436,3.35941651 18.4566936,3.58712602 17.643321,3.68813544 C18.4892756,3.15643522 19.14001,2.31617804 19.4462379,1.3135014 C18.6408296,1.81340397 17.7596395,2.16560406 16.8407487,2.35488112 C16.065228,1.48861704 14.9807082,0.99794649 13.846095,1.00000646 C11.5810292,1.00000646 9.74264096,2.92101374 9.74264096,5.29070981 C9.74264096,5.62742659 9.77887793,5.955602 9.84982073,6.26896348 C6.43920738,6.08972819 3.41648272,4.38212168 1.39231623,1.78554549 C1.03887819,2.41854101 0.837278144,3.15643522 0.837278144,3.94304193 C0.837278144,5.43110856 1.56137956,6.74474442 2.6621413,7.51440185 C2.01041955,7.49350911 1.37299248,7.30943758 0.803337884,6.97763019 L0.803337884,7.03234833 C0.803337884,9.1108371 2.21785564,10.8452689 4.09401197,11.2403072 C3.48976827,11.4114337 2.85622211,11.4365345 2.24133311,11.3137096 C2.76370689,13.0187804 4.27953504,14.2591473 6.07428579,14.2951812 C4.67023082,15.4442622 2.90125426,16.1315755 0.978398173,16.1315755 C0.65143461,16.1311842 0.324762939,16.1111323 0,16.071519 C1.81567632,17.2886641 3.97292435,18 6.28992127,18 C13.8371633,18 17.9635844,11.4599805 17.9635844,5.78851147 C17.9635844,5.60300361 17.9635844,5.41749575 17.9508249,5.23332248 C18.7537562,4.62570163 19.4471529,3.87377748 19.9987241,3.01256654 L20,3.01256654 Z"
+																			id="twitter-shape"
+																			fill="#000000"
+																			fill-rule="nonzero"
+																		/>
+																	</g>
+																</g>
+															</svg>
+														</div>
+														<p>Twitter</p>
+													</a>
+												</li>
+
+												<li>
+													<a
+														className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
+														href=""
+													>
+														<div className="mr-2">
+															<svg
+																width="20px"
+																height="20px"
+																viewBox="0 0 20 20"
+																version="1.1"
+																xmlns="http://www.w3.org/2000/svg"
+															>
+																<g
+																	id="medium-icon"
+																	stroke="none"
+																	stroke-width="1"
+																	fill="none"
+																	fill-rule="evenodd"
+																>
+																	<g>
+																		<rect
+																			id="Rectangle-Copy-2"
+																			fill-opacity="0"
+																			fill="#D8D8D8"
+																			x="0"
+																			y="0"
+																			width="20"
+																			height="20"
+																		/>
+																		<g
+																			class="social-icon-color"
+																			id="medium-shape"
+																			transform="translate(0.000000, 1.000000)"
+																			fill="#000000"
+																			fill-rule="nonzero"
+																		>
+																			<path
+																				d="M20,17 L12.3810526,17 C12.3810526,17 13.9421053,15.17675 13.9536842,15.0800625 C13.9642105,14.983375 13.9684211,3.92275 13.9684211,3.92275 L8.94736842,17 C8.94736842,17 3.28947368,4.10975 3.17473684,3.7771875 C3.17473684,3.7771875 3.16947368,13.1250625 3.19473684,13.228125 C3.22105263,13.33225 5.71473684,17 5.71473684,17 L0,17 C0,17 2.49473684,13.3333125 2.52,13.2291875 C2.54631579,13.1250625 2.55473684,3.1311875 2.54631579,3.0398125 C2.53894737,2.947375 2.50842105,2.8761875 2.41578947,2.75825 L0.634736842,0 L6.02842105,0 L10.5263158,10.625 L14.7557895,0 L20,0 C20,0 18.4515789,2.0028125 18.4305263,2.1154375 C18.4084211,2.2280625 18.4136842,14.9780625 18.4252632,15.0715625 C18.4357895,15.166125 20,17 20,17 Z"
+																				id="Shape"
+																			/>
+																		</g>
+																	</g>
+																</g>
+															</svg>
+														</div>
+														<p> Medium</p>
+													</a>
+												</li>
+
+												<li>
+													<a
+														className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
+														href=""
+													>
+														<div className="mr-2">
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																className="w-5"
+																version="1.1"
+																x="0"
+																y="0"
+																viewBox="0 0 109.6 107"
+																enable-background="new 0 0 109.6 107"
+															>
+																<path
+																	display="none"
+																	d="M108.4 48.9c-3.4 5-7.5 9.2-12.3 12.7 0 0.7 0.1 1.8 0.1 3.2 0 6.6-1 13.1-2.9 19.7 -1.9 6.5-4.8 12.8-8.8 18.8 -3.9 6-8.6 11.3-14 16 -5.4 4.6-11.9 8.3-19.6 11.1 -7.6 2.8-15.8 4.1-24.5 4.1 -13.7 0-26.2-3.7-37.6-11 1.8 0.2 3.7 0.3 5.9 0.3 11.4 0 21.5-3.5 30.4-10.5 -5.3-0.1-10.1-1.7-14.2-4.9 -4.2-3.2-7.1-7.2-8.6-12.1C4 96.5 5.5 96.6 7 96.6c2.2 0 4.3-0.3 6.4-0.8 -5.7-1.2-10.3-4-14.1-8.5 -3.7-4.5-5.6-9.7-5.6-15.6v-0.3c3.4 1.9 7.1 3 11.1 3.1 -3.3-2.2-6-5.1-8-8.7 -2-3.6-3-7.5-3-11.7 0-4.4 1.1-8.6 3.3-12.4 6.1 7.5 13.6 13.6 22.3 18.1 8.8 4.5 18.2 7 28.2 7.5 -0.4-1.9-0.6-3.8-0.6-5.6 0-6.8 2.4-12.5 7.2-17.3s10.5-7.2 17.3-7.2c7.1 0 13 2.6 17.9 7.7 5.5-1.1 10.7-3 15.5-5.9 -1.9 5.8-5.5 10.3-10.8 13.5C99 52.2 103.7 50.9 108.4 48.9z"
+																/>
+																<path
+																	display="none"
+																	d="M109.2 49.8c-3.4 5-7.5 9.2-12.3 12.7 0 0.7 0.1 1.8 0.1 3.2 0 6.6-1 13.1-2.9 19.7 -1.9 6.5-4.8 12.8-8.8 18.8 -3.9 6-8.6 11.3-14 16 -5.4 4.6-11.9 8.3-19.6 11.1 -7.6 2.8-15.8 4.1-24.5 4.1 -13.7 0-26.2-3.7-37.6-11 1.8 0.2 3.7 0.3 5.9 0.3 11.4 0 21.5-3.5 30.4-10.5 -5.3-0.1-10.1-1.7-14.2-4.9 -4.2-3.2-7.1-7.2-8.6-12.1 1.7 0.3 3.2 0.4 4.6 0.4 2.2 0 4.3-0.3 6.4-0.8 -5.7-1.2-10.3-4-14.1-8.5 -3.7-4.5-5.6-9.7-5.6-15.6v-0.3c3.4 1.9 7.1 3 11.1 3.1 -3.3-2.2-6-5.1-8-8.7 -2-3.6-3-7.5-3-11.7 0-4.4 1.1-8.6 3.3-12.4 6.1 7.5 13.6 13.6 22.3 18.1 8.8 4.5 18.2 7 28.2 7.5 -0.4-1.9-0.6-3.8-0.6-5.6 0-6.8 2.4-12.5 7.2-17.3s10.5-7.2 17.3-7.2c7.1 0 13 2.6 17.9 7.7 5.5-1.1 10.7-3 15.5-5.9 -1.9 5.8-5.5 10.3-10.8 13.5C99.8 53 104.5 51.8 109.2 49.8z"
+																/>
+																<path
+																	display="none"
+																	d="M98.2 50.1v73.7c0 3.5-1.2 6.5-3.7 9 -2.5 2.5-5.5 3.7-9 3.7H11.8c-3.5 0-6.5-1.2-9-3.7 -2.5-2.5-3.7-5.5-3.7-9V50.1c0-3.5 1.2-6.5 3.7-9 2.5-2.5 5.5-3.7 9-3.7h73.7c3.5 0 6.5 1.2 9 3.7C97 43.6 98.2 46.6 98.2 50.1zM87 121.1V79.3h-8.7c0.9 2.7 1.3 5.5 1.3 8.5 0 5.4-1.4 10.4-4.1 15 -2.8 4.6-6.5 8.2-11.2 10.9 -4.7 2.7-9.9 4-15.5 4 -8.5 0-15.7-2.9-21.8-8.7 -6-5.8-9-12.9-9-21.1 0-2.9 0.4-5.7 1.3-8.5h-9.1v41.8c0 1.1 0.4 2.1 1.1 2.8 0.8 0.8 1.7 1.1 2.8 1.1h69c1.1 0 2-0.4 2.8-1.1C86.6 123.2 87 122.3 87 121.1zM62.8 100.4c3.9-3.8 5.8-8.3 5.8-13.7 0-5.3-1.9-9.9-5.8-13.7 -3.9-3.8-8.6-5.6-14.1-5.6 -5.5 0-10.1 1.9-14 5.6 -3.9 3.8-5.8 8.3-5.8 13.7 0 5.3 1.9 9.9 5.8 13.7 3.9 3.8 8.6 5.6 14 5.6C54.2 106 58.9 104.2 62.8 100.4zM87 63.5V52.9c0-1.2-0.4-2.2-1.3-3.1 -0.9-0.9-1.9-1.3-3.2-1.3H71.3c-1.2 0-2.3 0.4-3.2 1.3 -0.9 0.9-1.3 1.9-1.3 3.1v10.6c0 1.2 0.4 2.3 1.3 3.2C69 67.5 70 68 71.3 68h11.2c1.2 0 2.3-0.4 3.2-1.3C86.5 65.8 87 64.8 87 63.5z"
+																/>
+																<path
+																	display="none"
+																	d="M102.2 27.3c4.9 8.4 7.4 17.6 7.4 27.5 0 10-2.5 19.1-7.4 27.5 -4.9 8.4-11.6 15.1-20 20 -8.4 4.9-17.6 7.4-27.5 7.4 -10 0-19.1-2.5-27.5-7.4 -8.4-4.9-15.1-11.6-20-20C2.3 74-0.1 64.8-0.1 54.9c0-10 2.5-19.1 7.4-27.5 4.9-8.4 11.6-15.1 20-20C35.6 2.5 44.8 0 54.7 0c10 0 19.1 2.5 27.5 7.4C90.7 12.3 97.3 18.9 102.2 27.3zM59.8 54.6c-1-2.3-2.3-5-3.8-7.9 -14.8 4.4-30.8 6.6-48.1 6.6 0 0.3-0.1 0.8-0.1 1.5 0 5.9 1 11.5 3.1 16.9 2.1 5.4 5 10.2 8.9 14.4 2.4-4.2 5.3-8.2 8.8-11.9 3.5-3.7 6.9-6.7 10.2-8.9 3.3-2.2 6.4-4.2 9.3-5.8 2.9-1.6 5.3-2.8 7.1-3.4l2.6-0.9c0.2 0 0.5-0.1 0.9-0.2C59.3 54.8 59.6 54.7 59.8 54.6zM52.1 39.5c-5.7-10.1-11.5-19.1-17.4-27C28.1 15.6 22.6 20 18 25.8c-4.6 5.8-7.6 12.2-9.1 19.4C23.2 45.2 37.7 43.3 52.1 39.5zM73 98c-2-11.5-5.3-23.3-10-35.6h-0.1l-0.1 0.1c-0.8 0.3-1.8 0.7-3.1 1.2 -1.3 0.5-3.7 1.7-7.2 3.5C48.9 69 45.6 71 42.6 73s-6.1 4.8-9.4 8.2c-3.2 3.4-5.7 6.9-7.4 10.6L24.9 91c8.8 7.1 18.7 10.7 29.9 10.7C61 101.7 67.1 100.5 73 98zM43.5 9.4c0 0-0.1 0-0.1 0.1C43.4 9.4 43.5 9.4 43.5 9.4zM85.6 19.7C76.8 11.9 66.5 8 54.7 8c-3.6 0-7.3 0.5-11.1 1.4 6.2 8.1 12.1 17.2 17.6 27.3 3.3-1.2 6.4-2.7 9.3-4.3 2.9-1.6 5.2-3.1 6.9-4.4 1.7-1.3 3.2-2.6 4.7-4.1s2.3-2.4 2.7-2.9S85.4 20 85.6 19.7zM101.6 54.4c-0.1-11-3.7-20.8-10.6-29.3l-0.1 0.1c-0.4 0.6-0.9 1.2-1.4 1.8 -0.5 0.6-1.5 1.7-3.1 3.2 -1.6 1.5-3.3 3-5.1 4.3 -1.8 1.4-4.2 2.9-7.1 4.6 -3 1.7-6.1 3.3-9.4 4.6 1.2 2.5 2.2 4.8 3.1 6.8 0.1 0.3 0.2 0.7 0.5 1.2 0.2 0.5 0.4 0.9 0.5 1.2 1.7-0.2 3.5-0.4 5.3-0.5 1.8-0.1 3.6-0.1 5.2-0.1 1.7 0 3.3 0 4.9 0.1 1.6 0.1 3.1 0.2 4.6 0.3 1.4 0.1 2.8 0.2 4 0.4 1.3 0.1 2.4 0.3 3.4 0.5 1 0.2 1.9 0.3 2.6 0.4 0.7 0.1 1.3 0.2 1.8 0.3L101.6 54.4zM101 62.3c-10-2.9-19.7-3.5-29.2-2.1 4.1 11.4 7.2 22.5 9.1 33.5 5.3-3.6 9.7-8.1 13.2-13.5C97.7 74.7 100 68.8 101 62.3z"
+																/>
+																<path d="M109.6 54.9c0 12-3.5 22.7-10.5 32.2 -7 9.5-16 16.2-27 19.8 -1.3 0.2-2.2 0.1-2.8-0.5 -0.6-0.6-0.9-1.3-0.9-2.1V89.2c0-4.6-1.2-8-3.7-10.1 2.7-0.3 5.2-0.7 7.3-1.3 2.2-0.6 4.4-1.5 6.7-2.8s4.2-2.9 5.8-4.8c1.5-1.9 2.8-4.4 3.8-7.5 1-3.1 1.5-6.7 1.5-10.8 0-5.8-1.9-10.7-5.6-14.7 1.8-4.3 1.6-9.2-0.6-14.6 -1.3-0.4-3.3-0.2-5.8 0.8 -2.5 1-4.7 2-6.6 3.1l-2.7 1.7c-4.4-1.2-9-1.9-13.7-1.9 -4.7 0-9.3 0.6-13.7 1.9 -0.8-0.5-1.8-1.2-3-1.9 -1.3-0.8-3.2-1.7-6-2.8 -2.7-1.1-4.8-1.4-6.1-1 -2.1 5.4-2.3 10.2-0.5 14.6 -3.8 4-5.6 9-5.6 14.7 0 4 0.5 7.6 1.5 10.7 1 3.1 2.2 5.6 3.8 7.5 1.5 1.9 3.4 3.5 5.8 4.8s4.5 2.2 6.7 2.8 4.6 1 7.3 1.3c-1.9 1.7-3.1 4.2-3.5 7.4 -1 0.5-2.1 0.8-3.2 1.1 -1.1 0.2-2.5 0.4-4.1 0.4s-3.1-0.5-4.7-1.5c-1.5-1-2.9-2.5-4-4.5 -0.9-1.5-2.1-2.8-3.5-3.7 -1.4-1-2.6-1.5-3.5-1.7l-1.4-0.2c-1 0-1.7 0.1-2.1 0.3 -0.4 0.2-0.5 0.5-0.4 0.8 0.1 0.3 0.4 0.7 0.6 1 0.3 0.3 0.6 0.6 0.9 0.9l0.5 0.4c1 0.5 2.1 1.4 3.1 2.7 1 1.3 1.8 2.5 2.2 3.6l0.7 1.6c0.6 1.8 1.7 3.3 3.1 4.4 1.5 1.1 3.1 1.8 4.8 2.1 1.7 0.3 3.4 0.5 5 0.5 1.6 0 2.9-0.1 4-0.2l1.6-0.3c0 1.8 0 3.9 0 6.4 0 2.4 0 3.7 0 3.9 0 0.9-0.3 1.6-0.9 2.1 -0.6 0.6-1.6 0.7-2.9 0.5 -11-3.7-20.1-10.3-27-19.8 -7-9.5-10.5-20.3-10.5-32.2 0-10 2.5-19.1 7.4-27.5 4.9-8.4 11.6-15.1 20-20C35.6 2.5 44.7 0 54.7 0c10 0 19.1 2.5 27.5 7.4 8.4 4.9 15.1 11.6 20 20C107.1 35.7 109.6 44.9 109.6 54.9z" />
+															</svg>
+														</div>
+														<p> Github </p>
+													</a>
+												</li>
+
+												<li>
+													<a
+														className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
+														href=""
+													>
+														<div className="mr-2">
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																width="20"
+																height="20"
+																viewBox="0 0 24 24"
+															>
+																<path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+															</svg>
+														</div>
+														<p>Linkedin</p>
+													</a>
+												</li>
+
+												<li>
+													<a
+														className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
+														href=""
+													>
+														<div className="mr-2">
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																width="20"
+																height="20"
+																viewBox="0 0 24 24"
+															>
+																<path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
+															</svg>
+														</div>
+														<p>Email</p>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>

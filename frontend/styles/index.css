@@ -15,4 +15,8 @@
   line-height: 1.15;
 }
 
+.bg-green-online {
+  background-color: #2ffd0f;
+}
+
 @tailwind utilities;
