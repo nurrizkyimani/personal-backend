@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/info-stack",
+      "handler": "info-stack.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/info-stack",
+      "handler": "info-stack.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/info-stack",
+      "handler": "info-stack.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "name": "about"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "h1_title": {
+      "type": "string"
+    },
+    "h2_sub_title": {
+      "type": "text"
+    },
+    "p_tag": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-details.p-tag"
+    }
+  }
+}

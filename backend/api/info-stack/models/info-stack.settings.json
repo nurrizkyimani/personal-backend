@@ -1,0 +1,16 @@
+{
+  "kind": "singleType",
+  "collectionName": "info_stacks",
+  "info": {
+    "name": "info_stack"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "info": {
+      "type": "text"
+    }
+  }
+}

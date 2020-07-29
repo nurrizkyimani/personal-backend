@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_details_p_tags",
+  "info": {
+    "name": "p_tag",
+    "icon": "border-all"
+  },
+  "options": {},
+  "attributes": {
+    "each_ptag": {
+      "type": "text"
+    }
+  }
+}
