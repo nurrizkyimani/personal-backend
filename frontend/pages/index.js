@@ -6,8 +6,8 @@ import useMediaLink from '../hooks/useMediaLink';
 import useNavbarLink from '../hooks/navbar-hooks';
 import useMenuLink from '../hooks/menu-hooks';
 import Playlist from '../components/playlist';
-import Hamburger from '../components/CloseButton';
-import CloseButton from '../components/CloseButton';
+
+import CloseButton from '../components/closeButton';
 
 export default function IndexPage() {
 	const [ projects, setProjects ] = useState([]);
@@ -93,13 +93,7 @@ export default function IndexPage() {
 		fetchingHero();
 	}, []);
 
-	useEffect(
-		() => {
-			console.log('medialink');
-			console.log(menuLink);
-		},
-		[ menuLink ]
-	);
+
 
 	const toggleTrueFalse = () => setToggled(!isToggled);
 
