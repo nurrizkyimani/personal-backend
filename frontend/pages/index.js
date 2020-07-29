@@ -9,6 +9,8 @@ import Playlist from '../components/playlist';
 
 import CloseButton from '../components/closeButton';
 
+import Head from 'next/head'
+
 export default function IndexPage() {
 	const [ projects, setProjects ] = useState([]);
 	const [ experiences, setExperiences ] = useState([]);
@@ -98,7 +100,12 @@ export default function IndexPage() {
 	const toggleTrueFalse = () => setToggled(!isToggled);
 
 	return (
-		<div className="">
+		<div>
+			<Head>
+				<link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/male-technologist_1f468-200d-1f4bb.png"></link>
+        <title>Nurrizky Imani</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
 			<div className="flex flex-col h-screen relative bg-gray-100">
 				<Nav addClass="bg-blue-100" toggleTFProp={() => toggleTrueFalse()} />
 
