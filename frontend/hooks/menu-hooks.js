@@ -5,22 +5,22 @@ const useMenuLink = () => {
 
   const links = [
     {
-        link: '',
+        link: `#experience`,
         icon: `🏠`,
         info:  `Experiences`
     },
     {
-        link: '',
+        link: '#project',
         icon: `📂`,
         info: `Projects`
     },
     {
-        link: '',
+        link: '#stack',
         icon: `🛠`,
         info: `Stacks`
     },
      {
-        link: '',
+        link: '#about',
         icon: `👨‍🚀`,
         info: 'About'
     },

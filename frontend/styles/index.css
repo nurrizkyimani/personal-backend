@@ -23,6 +23,9 @@
   max-width: 23rem;
 }
 
-.button-big-sur {}
+
+html {
+  scroll-behavior: smooth;
+}
 
 @tailwind utilities;

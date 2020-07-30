@@ -6,10 +6,13 @@ import useMediaLink from '../hooks/useMediaLink';
 import useNavbarLink from '../hooks/navbar-hooks';
 import useMenuLink from '../hooks/menu-hooks';
 import Playlist from '../components/playlist';
-
 import CloseButton from '../components/closeButton';
+import Head from 'next/head';
 
-import Head from 'next/head'
+import Link from 'next/link'
+
+
+
 
 export default function IndexPage() {
 	const [ projects, setProjects ] = useState([]);
@@ -24,6 +27,7 @@ export default function IndexPage() {
 	const menuLink = useMenuLink();
 
 	useEffect(() => {
+
 		const fetching = async () => {
 			try {
 				const res = await axios.get(`${process.env.API_URL}/projects`);
@@ -48,7 +52,7 @@ export default function IndexPage() {
 
 		const fetchingstack = async () => {
 			try {
-				const res = await axios.get(`${process.env.API_URL}/stacks`);
+				const res = await axios.get(`${process.env.API_URL}/stacks?_sort=id:ASC`);
 				setStacks(res.data);
 				console.log('setstack done');
 			} catch (error) {
@@ -95,17 +99,23 @@ export default function IndexPage() {
 		fetchingHero();
 	}, []);
 
-
-
 	const toggleTrueFalse = () => setToggled(!isToggled);
+
+	if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+	}
 
 	return (
 		<div>
 			<Head>
-				<link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/male-technologist_1f468-200d-1f4bb.png"></link>
-        <title>Nurrizky Imani</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+				<link
+					rel="icon"
+					href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/male-technologist_1f468-200d-1f4bb.png"
+				/>
+				<title>Nurrizky Imani</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
 			<div className="flex flex-col h-screen relative bg-gray-100">
 				<Nav addClass="bg-blue-100" toggleTFProp={() => toggleTrueFalse()} />
 
@@ -132,7 +142,7 @@ export default function IndexPage() {
 							{menuLink.map((menu) => (
 								<div className="icon-work flex py-2  hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2  ">
 									<p className="md:text-xl mr-1">{menu.icon}</p>
-									<a href="" className="ml-3 ">
+									<a href={menu.link} className="ml-3 ">
 										{' '}
 										{menu.info}
 									</a>
@@ -143,7 +153,7 @@ export default function IndexPage() {
 								{navbarLink.map((link) => (
 									<li>
 										<a
-											href="#"
+											href=""
 											className="inline-block text-sm px-2 py-2 hover:shadow-inner transform pl-1 leading-snug rounded-md text-gray-900  
 											transition duration-300 ease-in-out  hover:bg-gray-300  lg:mt-0"
 										>
@@ -175,76 +185,79 @@ export default function IndexPage() {
 								<p className="text-lg mb-2">{heroInfo.p1}</p>
 
 								<p className="text-lg mb-5 md:mb-12">{heroInfo.p2}</p>
-								<a
-									href="#"
-									class="font-semibold text-lg bg-blue-500 hover:bg-blue-400 transition duration-300 ease-in-out  text-white py-3 px-10 rounded-full hover:shadow-inner transform"
-								>
-									Let's Gooo !
-								</a>
+								<p class="font-semibold text-lg bg-blue-500 hover:bg-blue-400 transition duration-300 ease-in-out  text-white py-3 px-10 rounded-full hover:shadow-inner transform">
+									Lets Go
+								</p>
 							</div>
 						</div>
+						
 
-						<h1 className=" border-b  border-blue-600 mb-5 md:mb-0 text-4xl sticky px-5 md:px-0">
-							Experience 🧳
-						</h1>
+					
 
-						<div className="work-exp md:px-8 md:py-1">
-							<div>
-								<div className="relative  m-8">
-									<div className="border-r-2 border-gray-800 border-dotted absolute h-full z-0 pl-2 mt-2" />
-									<ul className="list-none m-0 p-0">
-										{experiences.map((exp) => (
-											<li key={exp.id} className="mb-4">
-												<div className="flex mb-1 align-top content-start">
-													<div className="flex">
-														<img
-															className="w-12 h-12 object-none -ml-4 z-10"
-															src="https://picsum.photos/200/300?random=1"
-															alt="Sunset in the mountains"
-														/>
-														<div className="flex flex-col">
-															<div className="ml-4 font-medium">{exp.title}</div>
-															<p className=" ml-4 text-sm ">{exp.company}</p>
+						<div id="experience">
+							<h1 className=" border-b  border-blue-600 mb-5 md:mb-0 text-4xl sticky px-5 md:px-0">
+								Experience 🧳
+							</h1>
+
+							<div className="work-exp md:px-8 md:py-1">
+								<div>
+									<div className="relative  m-8">
+										<div className="border-r-2 border-gray-800 border-dotted absolute h-full z-0 pl-2 mt-2" />
+										<ul className="list-none m-0 p-0">
+											{experiences.map((exp) => (
+												<li key={exp.id} className="mb-4">
+													<div className="flex mb-1 align-top content-start">
+														<div className="flex">
+															<img
+																className="w-12 h-12 object-none -ml-4 z-10"
+																src="https://picsum.photos/200/300?random=1"
+																alt="Sunset in the mountains"
+															/>
+															<div className="flex flex-col">
+																<div className="ml-4 font-medium">{exp.title}</div>
+																<p className=" ml-4 text-sm ">{exp.company}</p>
+															</div>
+														</div>
+
+														<div className="flex z-auto flex-col flex-1 items-end relative md:pr-5 text-right">
+															<p className="text-sm">{exp.location}</p>
+															<p className="text-sm">{exp.time_range}</p>
 														</div>
 													</div>
+													<div className="ml-12 ">
+														<div className="flex flex-col" />
+														<ul className="list-disc space-y-2 pl-5 overflow-x-hidden">
+															{exp.job_desc.map((job) => {
+																if (job.each_jobdesc != null) {
+																	return <li key={job.id}>{job.each_jobdesc}</li>;
+																}
+															})}
+														</ul>
 
-													<div className="flex z-auto flex-col flex-1 items-end relative md:pr-5 text-right">
-														<p className="text-sm">{exp.location}</p>
-														<p className="text-sm">{exp.time_range}</p>
+														<div class="align-start pt-4">
+															{exp.tech_stack.map((stack) => {
+																if (stack.each_stack != null) {
+																	return (
+																		<span
+																			key={stack.id}
+																			class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2"
+																		>
+																			{stack.each_stack}
+																		</span>
+																	);
+																}
+															})}
+														</div>
 													</div>
-												</div>
-												<div className="ml-12 ">
-													<div className="flex flex-col" />
-													<ul className="list-disc space-y-2 pl-5 overflow-x-hidden">
-														{exp.job_desc.map((job) => {
-															if (job.each_jobdesc != null) {
-																return <li key={job.id}>{job.each_jobdesc}</li>;
-															}
-														})}
-													</ul>
-
-													<div class="align-start pt-4">
-														{exp.tech_stack.map((stack) => {
-															if (stack.each_stack != null) {
-																return (
-																	<span
-																		key={stack.id}
-																		class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2"
-																	>
-																		{stack.each_stack}
-																	</span>
-																);
-															}
-														})}
-													</div>
-												</div>
-											</li>
-										))}
-									</ul>
+												</li>
+											))}
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div>
+
+						<div id="project">
 							<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky px-5 md:px-0 ">
 								Projects 📂
 							</h1>
@@ -269,7 +282,7 @@ export default function IndexPage() {
 										<div>
 											<img
 												className="w-full h-48 object-cover border-b"
-												src={`http://localhost:1337${project.photo[0].url}`}
+												src={`${process.env.API_URL}${project.photo[0].url}`}
 												alt="Sunset in the mountains"
 											/>
 											<dir className="px-5 py-2 ">
@@ -303,7 +316,7 @@ export default function IndexPage() {
 							</div>
 						</div>
 
-						<div>
+						<div id="target">
 							<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky px-5 md:px-0 ">Stack 🛠</h1>
 							<div className="px-5 md:px-0">
 								<p key={stackInfo.id} className="md:pb-5">
@@ -333,8 +346,11 @@ export default function IndexPage() {
 								</div>
 							</div>
 						</div>
+						
 
-						<div className="min-h-full">
+
+				
+						<div className="min-h-full" id="section1">
 							<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky font-bold  px-5 md:px-0">
 								About 👨‍🚀
 							</h1>
@@ -371,7 +387,7 @@ export default function IndexPage() {
 
 										<div>
 											<h3 className="page-h3">Stay up-to-date</h3>
-											<p className=" text-sm">
+											<p className=" text-sm mt-2">
 												<strong>Hint:</strong>{' '}
 												<span class=" opacity-50">Active on Instagram and Twitter.</span>
 											</p>
@@ -380,7 +396,7 @@ export default function IndexPage() {
 													<li className="social-link  ">
 														<a
 															className="flex text-sm py-2 pr-2 hover:shadow-inner transition duration-300 ease-in-out hover:bg-gray-300 rounded-md p-2 -ml-2"
-															href=""
+															href={each.link}
 														>
 															<div className="mr-2">{each.svg}</div>
 
