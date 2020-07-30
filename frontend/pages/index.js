@@ -9,7 +9,6 @@ import Playlist from '../components/playlist';
 import CloseButton from '../components/closeButton';
 import Head from 'next/head';
 
-import Link from 'next/link'
 
 
 
@@ -101,10 +100,8 @@ export default function IndexPage() {
 
 	const toggleTrueFalse = () => setToggled(!isToggled);
 
-	if (typeof window !== "undefined") {
-  // eslint-disable-next-line global-require
-  require("smooth-scroll")('a[href*="#"]')
-	}
+	let indigo
+
 
 	return (
 		<div>
@@ -190,8 +187,7 @@ export default function IndexPage() {
 								</p>
 							</div>
 						</div>
-						
-
+					
 					
 
 						<div id="experience">
@@ -315,6 +311,8 @@ export default function IndexPage() {
 								))}
 							</div>
 						</div>
+
+
 
 						<div id="target">
 							<h1 className=" border-b  border-blue-600 mb-5 text-4xl sticky px-5 md:px-0 ">Stack 🛠</h1>
