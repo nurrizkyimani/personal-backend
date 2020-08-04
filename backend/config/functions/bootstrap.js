@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * An asynchronous bootstrap function that runs before
@@ -10,4 +10,5 @@
  * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#bootstrap
  */
 
+require("dotenv").config({ path: require("find-config")(".env") });
 module.exports = () => {};
