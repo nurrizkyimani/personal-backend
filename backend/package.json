@@ -14,8 +14,8 @@
     "dotenv": "^8.2.0",
     "find-config": "^1.0.0",
     "knex": "<0.20.0",
-    "pg": "^8.3.0",
-    "sqlite3": "latest",
+    "pg": "^8.6.0",
+    "sqlite3": "^5.0.2",
     "strapi": "3.0.6",
     "strapi-admin": "3.0.6",
     "strapi-connector-bookshelf": "3.0.6",
@@ -24,7 +24,7 @@
     "strapi-plugin-email": "3.0.6",
     "strapi-plugin-upload": "3.0.6",
     "strapi-plugin-users-permissions": "3.0.6",
-    "strapi-provider-upload-google-cloud-storage": "^3.0.5",
+    "strapi-provider-upload-google-cloud-storage": "^3.4.6",
     "strapi-utils": "3.0.6"
   },
   "author": {
