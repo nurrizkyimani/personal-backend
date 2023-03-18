@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stacks",
+  "info": {
+    "singularName": "stack",
+    "pluralName": "stacks",
+    "displayName": "Stack",
+    "name": "stack"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "perlevel_stack": {
+      "type": "component",
+      "repeatable": true,
+      "component": "stack-details.each-stack"
+    }
+  }
+}

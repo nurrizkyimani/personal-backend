@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero",
+    "name": "hero"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "strong": {
+      "type": "text"
+    },
+    "p1": {
+      "type": "text"
+    },
+    "p2": {
+      "type": "text"
+    }
+  }
+}

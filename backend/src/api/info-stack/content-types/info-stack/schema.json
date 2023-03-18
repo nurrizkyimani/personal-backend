@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "info_stacks",
+  "info": {
+    "singularName": "info-stack",
+    "pluralName": "info-stacks",
+    "displayName": "Info-stack",
+    "name": "info-stack"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "info": {
+      "type": "text"
+    }
+  }
+}

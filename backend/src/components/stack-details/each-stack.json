@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_stack_details_each_stacks",
+  "info": {
+    "icon": "cubes",
+    "displayName": "each_stack_level"
+  },
+  "options": {},
+  "attributes": {
+    "each_stack": {
+      "type": "string"
+    },
+    "star": {
+      "type": "boolean"
+    }
+  }
+}

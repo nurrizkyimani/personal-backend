@@ -19,17 +19,10 @@
     "npm": "^6.14.9",
     "pg": "^8.6.0",
     "pg-connection-string": "^2.5.0",
-    "sqlite3": "^5.1.4",
-    "strapi": "3.6.9",
-    "strapi-admin": "3.6.9",
-    "strapi-connector-bookshelf": "3.6.9",
-    "strapi-plugin-content-manager": "3.6.9",
-    "strapi-plugin-content-type-builder": "3.6.9",
-    "strapi-plugin-email": "3.6.9",
-    "strapi-plugin-upload": "3.6.9",
-    "strapi-plugin-users-permissions": "3.6.9",
     "strapi-provider-upload-google-cloud-storage": "^3.6.8",
-    "strapi-utils": "3.6.9"
+    "better-sqlite3": "^7.6.2",
+    "@strapi/strapi": "4.8.2",
+    "@strapi/plugin-users-permissions": "4.8.2"
   },
   "author": {
     "name": "A Strapi developer"
@@ -38,8 +31,8 @@
     "uuid": "9c89ad93-e767-4f8b-8828-db7cc93fc7ce"
   },
   "engines": {
-    "node": "14.x.x",
-    "npm": "6.14.9"
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
