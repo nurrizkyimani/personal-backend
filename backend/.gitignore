@@ -118,8 +118,9 @@ build
 ##############################
 
 package-lock.json
-
 .env.example
-
-
 .env
+app.yaml
+
+
+node_modules
