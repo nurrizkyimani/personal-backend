@@ -8,7 +8,8 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "gcp-build": "strapi build"
+    "gcp-build": "strapi build",
+    "preinstall": "if [ ! -f /usr/bin/yarn ]; then npm install -g yarn; fi"
   },
   "devDependencies": {},
   "dependencies": {
@@ -19,7 +20,7 @@
     "dotenv": "^8.6.0",
     "find-config": "^1.0.0",
     "knex": "^2.4.2",
-    "npm": "^6.14.9",
+    "yarn": "^1.22.17",
     "pg": "^8.10.0",
     "pg-connection-string": "^2.5.0",
     "strapi-provider-upload-google-cloud-storage": "^3.6.8"
