@@ -1,10 +1,6 @@
-# project-personalweb
+# Personal Web - Backend
 
-Project for creating personal web using ReactJS and try bit with strapi.io
+Backend using Strapi CMS for personal web. Deploy in Netlify
 
-<p align="center">
- <img src="https://github.com/nurrizkyimani/project-personalweb/blob/master/screenshot.png">
-</p>
-
-
-https://www.getpostman.com/collections/c9b73e7d7e03f1194361
+## Sun, 19 Mar 2023
+- Migrating from Strapi V3 to Strapi V4
