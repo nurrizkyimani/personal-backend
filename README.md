@@ -8,11 +8,3 @@ Project for creating personal web using ReactJS and try bit with strapi.io
 
 
 https://www.getpostman.com/collections/c9b73e7d7e03f1194361
-
-
-Inspired by : 
-https://www.albertusangga.dev/
-https://danielkorpai.com/#work
-https://heyshawn.co/
-
-aaad
